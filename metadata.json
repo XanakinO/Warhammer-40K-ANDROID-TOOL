@@ -1,0 +1,6 @@
+{
+  "name": "Warhammer 40k Guide",
+  "description": "An all-around companion tool for new Warhammer 40k players, covering step-by-step game setup, phase-by-phase battle guide, points cost search, interactive army building, dice rolling, and a server-side Gemini AI Rules Sage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

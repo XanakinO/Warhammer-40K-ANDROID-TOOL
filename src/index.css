@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cinzel", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-grim-dark: #050607;
+  --color-grim-card: #0c0e10;
+  --color-grim-border: #181c1f;
+  
+  --animate-fade-in: fade-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-up: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-right: slide-right 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slide-up {
+    from { transform: translateY(12px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes slide-right {
+    from { transform: translateX(-16px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes glow-pulse {
+    0%, 100% { border-color: rgba(245, 158, 11, 0.2); box-shadow: 0 0 10px rgba(245, 158, 11, 0.02); }
+    50% { border-color: rgba(245, 158, 11, 0.45); box-shadow: 0 0 20px rgba(245, 158, 11, 0.12); }
+  }
+}
+
+@layer utilities {
+  /* Subtle gothic grid lines */
+  .grimdark-grid {
+    background-image: linear-gradient(to right, rgba(245, 158, 11, 0.02) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(245, 158, 11, 0.02) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  
+  /* Iron/brass borders */
+  .gothic-border {
+    border-image: linear-gradient(to right, #451a03, #d97706, #451a03) 1;
+  }
+
+  /* High fidelity premium panels */
+  .glass-panel {
+    background: rgba(12, 14, 16, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  
+  .glass-panel-heavy {
+    background: rgba(8, 9, 10, 0.92);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(245, 158, 11, 0.12);
+  }
+
+  /* Golden glow */
+  .shadow-amber-glow {
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.06);
+  }
+  
+  .shadow-amber-glow-strong {
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.18);
+  }
+}
+
+/* Base style resets */
+body {
+  background-color: var(--color-grim-dark);
+  font-family: var(--font-sans);
+  color: #e2e8f0;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-grim-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #181c1f;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
