@@ -1,0 +1,19 @@
+# Android
+*.iml
+.gradle
+/local.properties
+/.idea/
+.externalNativeBuild
+.cxx
+build/
+capture/
+
+# Node/Web
+node_modules/
+dist/
+.env
+.env.local
+
+# Misc
+.DS_Store
+*.swp
